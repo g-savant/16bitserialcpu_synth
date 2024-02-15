@@ -21,7 +21,7 @@ documentation:
   how_to_test:  "supply 10 bit input serially"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   external_hw:  "none"      # Describe any external hardware needed
   language:     "system verilog" # other examples include Verilog, Amaranth, VHDL, etc
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  doc_link:     "https://github.com/g-savant/tinytapeout_test/blob/main/README.txt"      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     1000       # Clock frequency in Hz (if required)
   picture:      ""      # relative path to a picture in your repository
   inputs:               # a description of what the inputs do

@@ -14,7 +14,7 @@ module my_chip (
                         .reset,
                         .go(io_in[11]),
                         .finish(io_in[10]),
-                        .range(io_out[9:0],
+                        .range(io_out[9:0]),
                         .debug_error(io_out[11])));
 
 endmodule
