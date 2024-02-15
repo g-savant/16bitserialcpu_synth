@@ -53,8 +53,10 @@ module RangeFinder
         end else begin
           if(finish) going <= 1'b0;
           else going <= 1'b1;
+
           if(data_in < min_val) min_val <= data_in;
           else min_val <= min_val;
+
           if(data_in > max_val) max_val <= data_in;
           else max_val <= max_val;
         end
@@ -72,6 +74,7 @@ module RangeFinder
     else if(data_in < max_val & data_in < min_val) range = max_val - data_in;
     else if(data_in > max_val & data_in > min_val) range = data_in - min_val;
     else if(data_in > max_val & data_in < min_val) range = max_val - min_val;
+    else range = max_val - min_val;
   end
 
 
