@@ -10,6 +10,7 @@ module instruction_decode(
     signals.opcode = (instruction[2:0]);
     halt = 1'b0;
     signals.rfWrite = 1'b0;
+    signals = 'd0;
     case(signals.opcode)
       R_TYPE: begin
         signals.rs1 = instruction[5:3];
