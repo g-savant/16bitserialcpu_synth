@@ -1,11 +1,11 @@
 `default_nettype none
 
-`include "types.vh"
-`include "reg_file.sv"
-`include "alu.sv"
-`include "control.sv"
-`include "components.sv"
-`include "decode.sv"
+// `include "types.vh"
+// `include "reg_file.sv"
+// `include "alu.sv"
+// `include "control.sv"
+// `include "components.sv"
+// `include "decode.sv"
 
 //12 in 12 out
 module cpu_core(
