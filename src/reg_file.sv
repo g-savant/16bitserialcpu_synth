@@ -9,7 +9,7 @@ module reg_file(
   output logic[15:0] rs1_data, rs2_data
 );
 
-logic[7:1][15:0] reg_file;
+logic[15:0] reg_file[7:1];
 
 always_comb begin
   if(rs1 == 0) rs1_data = 16'd0;
