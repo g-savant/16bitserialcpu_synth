@@ -1,11 +1,12 @@
 --- 
 project:
   source_files:
+    - types.vh
     - toplevel_chip.v
     - chip.sv
     - core.sv
     - reg_file.sv
-    - types.vh
+    
     - control.sv
     - components.sv 
     - alu.sv
