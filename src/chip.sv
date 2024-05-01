@@ -16,12 +16,11 @@ module my_chip (
 
     // Basic counter design as an example
 
-    cpu_core cpu(.(io_in[9:0]),
-                        .clk(clock),
+    cpu_core cpu(       .clk(clock),
                         .rst(reset),
                         .ard_data_ready(io_in[9]),
                         .ard_receive_ready(io_in[8]),
-                        .in_bus(io_out[7:0]),
+                        .in_bus(io_in[7:0]),
                         .out_bus(io_out[7:0]),
                         .bus_pc(io_out[8]),
                         .bus_mar(io_out[9]),
