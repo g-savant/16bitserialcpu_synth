@@ -133,7 +133,6 @@ module control(
       DONE: begin
         ns = DONE;
       end
-      default: ns = WAIT_SENDPC;
     endcase
   end
 

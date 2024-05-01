@@ -20,13 +20,13 @@
   } opcode_t;
 
   typedef enum logic[3:0] {
-      LB,
-      LHW,
-      LW,
-      LS_NONE,
-      SB,
-      SHW,
-      SW
+      LB = 3'b000,
+      LHW = 3'b001,
+      LW = 3'b010,
+      LS_NONE = 3'b011,
+      SB = 3'b100,
+      SHW = 3'b101,
+      SW = 3'b110
   } mem_op_t;
 
 
