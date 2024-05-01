@@ -36,6 +36,7 @@ module control(
     bus_mar = 1'b0;
     error = 1'b0;
     ctrl.pc_en = 1'b0;
+    ns = WAIT_SENDPC;
     case(cs)
       OP: begin
         ctrl.go = 1'b1;
@@ -132,6 +133,7 @@ module control(
       DONE: begin
         ns = DONE;
       end
+      default: ns = WAIT_SENDPC;
     endcase
   end
 
