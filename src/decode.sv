@@ -7,7 +7,7 @@ module instruction_decode(
 );
 
   always_comb begin
-    signals.opcode = opcode_t'(instruction[2:0]);
+    signals.opcode = (instruction[2:0]);
     halt = 1'b0;
     signals.rfWrite = 1'b0;
     case(signals.opcode)
@@ -15,7 +15,7 @@ module instruction_decode(
         signals.rs1 = instruction[5:3];
         signals.rs2 = instruction[8:6];
         signals.rd = instruction[11:9];
-        signals.alu_op =  alu_op_t'(instruction[15:12]);
+        signals.alu_op =  (instruction[15:12]);
         signals.is_double_word = 1'b0;
         signals.rfWrite = 1'b1;
         // signals.dest = REG_FILE;
@@ -26,7 +26,7 @@ module instruction_decode(
         // signals.dest = REG_FILE;
         signals.is_double_word = 1'b1;
         signals.useImm = 1'b1;
-        signals.alu_op = alu_op_t'(instruction[15:12]);
+        signals.alu_op = (instruction[15:12]);
         signals.rfWrite = 1'b1;
       end
       B_TYPE: begin
@@ -34,13 +34,13 @@ module instruction_decode(
         signals.rs2 = instruction[8:6];
         signals.offset = instruction[12:9];
         signals.is_double_word = 1'b0;
-        signals.b_type = br_op_t'(instruction[15:13]);
+        signals.b_type = (instruction[15:13]);
         
       end
       J_TYPE: begin
         signals.is_double_word = 1'b0;
         signals.offset = {instruction[15:12], instruction[8:4]};
-        signals.jump_type = jmp_t'(instruction[6]);
+        signals.jump_type = (instruction[6]);
         signals.rd = instruction[11:9];
       end
       M_TYPE: begin
@@ -49,7 +49,7 @@ module instruction_decode(
         signals.rs1 = instruction[5:3];
         signals.rs2 = instruction[8:6];
         signals.alu_op = ADD;
-        signals.mem_op = mem_op_t'(instruction[15:12]);
+        signals.mem_op = (instruction[15:12]);
         if(signals.mem_op == LW | signals.mem_op == LB | signals.mem_op == LHW) begin
           signals.rfWrite = 1'b1;
         end 

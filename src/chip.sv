@@ -1,11 +1,11 @@
 `default_nettype none
 
-`include "types.vh"
-`include "reg_file.sv"
-`include "alu.sv"
-`include "control.sv"
-`include "components.sv"
-`include "decode.sv"
+// `include "types.vh"
+// `include "reg_file.sv"
+// `include "alu.sv"
+// `include "control.sv"
+// `include "components.sv"
+// `include "decode.sv"
 
 module my_chip (
     input logic [11:0] io_in, // Inputs to your chip
