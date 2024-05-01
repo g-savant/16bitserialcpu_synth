@@ -6,7 +6,6 @@ project:
     - chip.sv
     - core.sv
     - reg_file.sv
-    
     - control.sv
     - components.sv 
     - alu.sv

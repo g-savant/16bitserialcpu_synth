@@ -15,7 +15,7 @@ module instr_shift_register(
 
   assign valid = ((opcode != M_TYPE & opcode != I_TYPE) & count == 2) | ((opcode == M_TYPE | opcode == I_TYPE) & count == 4);
 
-  assign opcode = opcode_t'(instruction[2:0]);
+  assign opcode = instruction[2:0];
 
 
   assign error =  (opcode != R_TYPE) & 
