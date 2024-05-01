@@ -124,6 +124,7 @@ end
 always_comb begin
   alu_input1 = rs1_data;
   alu_input2 = rs2_data;
+  rd_data = alu_result;
   case(dec.opcode)
     R_TYPE: begin
       alu_input1 = rs1_data;
