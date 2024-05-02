@@ -60,8 +60,8 @@
     logic rfWrite;
     mem_op_t mem_op;
     br_op_t br_op;
-    logic[8:0] offset;
-    logic[14:0] addr_offset;
+    logic[3:0] offset;
+    logic[8:0] addr_offset;
     logic useImm;
     logic useAddr;
     alu_op_t alu_op;
