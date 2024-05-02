@@ -1,16 +1,9 @@
 `default_nettype none
 
-`include "types.vh"
-`include "reg_file.sv"
-`include "alu.sv"
-`include "control.sv"
-`include "components.sv"
-`include "decode.sv"
-
 //12 in 12 out
 module cpu_core(
   input logic clk, rst,
-  input logic ard_data_ready, //could specify what kind of data send ard_instr, ard_data, 
+  input logic ard_data_ready, //could specify what kind of data send ard_instr, ard_data,
   input logic ard_receive_ready,
   input logic[7:0] in_bus,
   output logic bus_pc, bus_mar, bus_mdr, halt,
@@ -151,14 +144,14 @@ always_comb begin
         alu_input2 = imm;
         rd_data = mdr_out;
       end else if(dec.mem_op == SW | dec.mem_op == SB | dec.mem_op == SHW) begin
-        alu_input1 = rs1_data; 
+        alu_input1 = rs1_data;
         alu_input2 = imm;
       end
     end
   endcase
 
   mdr_in = (ard_data_ready) ? in_bus : rs2_data; // could be bus or register
-  
+
   mar_in = alu_result;
 
   //3 cases, pc is set to value in jump, pc is pc + offset ( branch), pc is pc+4, double word
@@ -174,14 +167,14 @@ always_comb begin
         BR_GEU: pc_in = (rs1_data >= rs2_data) ? pc + dec.offset : pc + 1;
         default: pc_in = pc + 1;
       endcase
-    end 
+    end
     I_TYPE: pc_in = pc + 2;
     M_TYPE: pc_in = pc + 2;
     default: pc_in = pc + 1;
   endcase
-  
+
   // pc_offset = (dec.opcode == B_TYPE) ? dec.offset : 4; //jump will have pure address
-  
+
 
   // pc_in = (dec.opcode == J_TYPE) ? dec.offset : pc + pc_offset;
 
