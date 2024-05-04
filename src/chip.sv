@@ -18,6 +18,7 @@ module my_chip (
 
     cpu_core cpu(       .clk(clock),
                         .rst(reset),
+                        .ard_clk(io_in[10]),
                         .ard_data_ready(io_in[9]),
                         .ard_receive_ready(io_in[8]),
                         .in_bus(io_in[7:0]),
